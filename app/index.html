@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>学生综合评测</title>
+  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
+  <script src="./app.js"></script>
+</head>
+<body>
+
+  <h1>学生综合评测</h1>
+  <div class="nav" id="managerNav">
+    <ul>
+        <li><a  onclick="Nav.addStudent()"/>添加学生</a></li>
+        <li><a  onclick="Nav.addBonus()"/>加分</a></li>
+        <li><a  onclick="Nav.addWelfare()"/>加公益时</a></li>
+        <li><a  onclick="Nav.addActivity()"/>添加活动</a></li>
+        <li><a  onclick="Nav.stopActivity()"/>截止活动</a></li>
+        <li><a  onclick="Nav.permitApply()"/>通过申请</a></li>
+        <li><a  onclick="Nav.changeUser()"/>切换用户</a></li>
+
+    </ul>
+</div>
+  <div class="nav" id="studentNav">
+    <ul>
+        <li><a  onclick="Nav.attendActivity()"/>参加活动</a></li>
+        <li><a  onclick="Nav.applyBonus()"/>申请加分</a></li>
+        <li><a  onclick="Nav.changeUser()"/>切换用户</a></li>
+    </ul>
+  </div>
+
+  <div class="user_identity">
+  <h2>您好，<span id="user">管理员</span>！</h2>
+  </div>
+
+
+  <div id="add_bonus" class="feature">
+  <br>
+  <h3 id="t">加分</h3>
+  <br><label for="amount">分数:</label><input type="text" id="amount" placeholder="e.g., 95"></input><br>
+  <br><label for="receiver">学生地址:</label><input type="text" id="receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input><br>
+  <br><br><button id="send" onclick="App.sendCoin()">加分</button><br><br>
+  </div>
+
+  <div id="add_welfare" class="feature">
+  <br>
+  <h3 id="t">加公益时</h3>
+  <br><label for="welfare">公益时:</label><input type="text" id="welfare" placeholder="e.g., 95"></input><br>
+  <br><label for="welfare_receiver">学生地址:</label><input type="text" id="welfare_receiver" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input><br>
+  <br><br><button id="send_welfare" onclick="App.sendWelfare()">加公益时</button><br><br>
+  </div>
+
+  <div id="add_student" class="feature">
+  <br>
+  <h3 id="t">添加学生</h3>
+  <br><label for="name">姓名:</label><br><input type="text" id="name" placeholder="e.g., 张三"></input><br>
+  <br><label for="id">学号:</label><br><input type="text" id="id" placeholder="e.g., 16340000"></input><br>
+  <br><br><button id="add" onclick="App.addStudent()">添加</button><br><br>
+  </div>
+
+
+
+<div id="add_activity" class="feature">
+<br>
+<h3 id="t">发布活动</h3>
+<br><label for="ac_name">活动名:</label><input type="text" id="ac_name" placeholder="e.g., 三下乡"></input><br>
+<br><label for="ac_detail">详情:</label><input type="text" id="ac_detail" placeholder="e.g., 去xx村xx小学义教"></input><br>
+<br><label for="ac_bonus">加分:</label><input type="text" id="ac_bonus" placeholder="e.g., 10"></input><br>
+<br><label for="ac_welfare">公益时:</label><input type="text" id="ac_welfare" placeholder="e.g., 10"></input><br>
+<br><br><button id="add" onclick="App.addActivity()">添加</button><br><br>
+</div>
+
+<div id="apply_bonus" class="feature">
+<br>
+<h3 id="t">申请加分</h3>
+<br><label for="apply_name">加分项:</label><input type="text" id="apply_name" placeholder="e.g., 美国大学生建模大赛"></input><br>
+<br><label for="apply_b">加分:</label><input type="text" id="apply_b" placeholder="e.g., 3"></input><br>
+<br><label for="apply_welfare">公益时:</label><input type="text" id="apply_welfare" placeholder="e.g., 0"></input><br>
+<br><br><button id="add" onclick="App.applyBonus()">申请</button><br><br>
+</div>
+
+<div id="attend_activity" class="feature">
+<br>
+<h3 id="t">参加活动</h3>
+<br><label for="attend_no">活动编号:</label><input type="text" id="attend_no" placeholder="e.g., 0"></input><br>
+<br><br><button id="attend" onclick="App.attendActivity()">参加</button><br><br>
+</div>
+
+<div id="stop_activity" class="feature">
+<br>
+<h3 id="t">截止活动</h3>
+<br><label for="stop_no">活动编号:</label><input type="text" id="stop_no" placeholder="e.g., 0"></input><br>
+<br><br><button id="stop" onclick="App.stopActivity()">截止</button><br><br>
+</div>
+
+<div id="permit_apply" class="feature">
+<br>
+<h3 id="t">通过申请</h3>
+<br><label for="permit_no">活动编号:</label><input type="text" id="permit_no" placeholder="e.g., 0"></input><br>
+<br><br><button id="permit" onclick="App.permitApply()">通过</button><br><br>
+</div>
+
+<div id="change_user" class="feature">
+<br>
+<h3 id="t">切换用户</h3>
+<br><label for="user_input">地址:</label><input type="text" id="user_input" placeholder="e.g., 0x93e66d9baea28c17d9fc393b53e3fbdd76899dae"></input><br>
+<br><br><button id="change" onclick="App.changeUser()">切换</button><br><br>
+</div>
+
+<div class="stu_table" >
+<table id="mytable" border="1">
+  <caption>学生列表</caption>
+  <thead>
+      <tr>
+          <th>学号</th>
+          <th>姓名</th>
+          <th>地址</th>
+          <th>综测分数</th>
+          <th>公益时</th>
+      </tr>
+  </thead>
+  <tbody id="listTable" >
+  </tbody>
+</table>
+</div>
+
+<br>
+<div class="stu_table" >
+<table id="ac_table" border="1">
+  <thead>
+    <caption>活动列表</caption>
+      <tr>
+          <th>编号</th>
+          <th>活动名</th>
+          <th>详情</th>
+          <th>可获得加分</th>
+          <th>可获得公益时</th>
+          <th>状态</th>
+      </tr>
+  </thead>
+  <tbody id="ac_listTable" >
+  </tbody>
+</table>
+</div>
+
+<br>
+<div class="stu_table" >
+<table id="apply_table" border="1">
+  <thead>
+    <caption>申请加分项列表</caption>
+      <tr>
+          <th>编号</th>
+          <th>申请者</th>
+          <th>加分项</th>
+          <th>申请加分</th>
+          <th>申请公益时</th>
+          <th>状态</th>
+      </tr>
+  </thead>
+  <tbody id="apply_listTable" >
+  </tbody>
+</table>
+</div>
+
+<br>
+
+</body>
+</html>

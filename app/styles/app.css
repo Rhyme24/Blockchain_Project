@@ -1,0 +1,164 @@
+body {
+  margin-left: 23%;
+  margin-right: 23%;
+  font-family: 'Audiowide', cursive;
+  background: #511B19;
+}
+
+label {
+  display: inline-block;
+  width: 100px;
+  color: #fff;
+}
+
+input {
+  width: 100%;
+  padding: 5px;
+  font-size: 16px;
+}
+
+button {
+  font-size: 16px;
+  padding: 10px 30px 10px 30px;
+  text-decoration:none;
+  background:#72647B;
+  color:#f2f2f2;
+  font-family: 微软雅黑,宋体,Arial,Helvetica,Verdana,sans-serif;
+  font-weight:bold;
+  border-radius:30px;
+  -webkit-transition:all linear 0.30s;
+  -moz-transition:all linear 0.30s;
+  transition:all linear 0.30s;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background:#52495A;
+ }
+
+h1 {
+  font-size: 40px;
+  font-weight: 500;
+  text-align: center;
+  text-transform: capitalize;
+  letter-spacing: 2px;
+  padding: 30px 0 30px 0;
+  color: #fff;
+}
+
+h2 {
+  color: #AAA;
+  font-size: 16px;
+}
+
+h3 {
+  font-weight: normal;
+  color: #fff;
+  font-size: 24px;
+  text-align: center;
+}
+
+.black {
+  color: black;
+}
+
+#balance {
+  color: black;
+}
+
+.hint {
+  color: #666;
+}
+
+table {
+    margin:0 auto;
+     border-collapse: collapse;
+     font-family: Futura, Arial, sans-serif;
+}
+
+caption {
+     color: #fff;
+     font-size: larger;
+     padding: 1em;
+     background:#BE3432;
+}
+
+th,td {
+     padding: .65em;
+}
+
+th {
+   background: #310e0c;
+   border: 1px solid #777;
+   color: #fff;
+}
+
+td {
+     border: 1px solid#777;
+}
+
+tbody tr:nth-child(odd) {
+     background: #D7716F;
+}
+
+tbody tr:nth-child(even) {
+     background: #F08982;
+}
+
+.stu_table {
+  background: #BE3432;
+  width: auto;
+  border: 20px solid #BE3432;
+  border-radius: 30px;
+}
+
+#managerNav ul {
+  width: 700px;
+}
+
+#studentNav ul {
+  width: 300px;
+}
+
+.nav {
+    border-top: solid 5px #E5383A;
+    border-bottom: solid 5px #E5383A;
+    background: #EB6C65;
+}
+
+.nav ul {
+  height:40px;
+  margin:0 auto;
+  padding:0;
+  list-style:none;
+}
+
+.nav ul li {
+  width:100px;
+  float:left;
+  text-align:center;
+  font:16px/2.5 "microsoft yahei";
+}
+
+.nav ul li a {
+  color:white; text-decoration:none;
+}
+
+.nav ul li a:hover {
+  display:block;
+  color:#FFFFFF;
+  background:#5C5364;
+  cursor: pointer;
+}
+
+.user_identity {
+  position:absolute;
+  right:1px;
+  top:1px;
+}
+
+.feature {
+  margin-left: 15%;
+  margin-right: 15%;
+}
